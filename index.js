@@ -1,8 +1,11 @@
+require('dotenv').config()
+
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = process.env.PORT ?? 3000;
 
-const appName= 'Test'
+const appName= process.env.APP_NAME ?? 'No instance'
+const appVersion= process.env.VERSION ?? '--'
 
 // Ruta principal
 app.get('/', (req, res) => {
@@ -11,7 +14,10 @@ app.get('/', (req, res) => {
 
 // Ruta principal
 app.get('/app', (req, res) => {
-  res.json({appanme: appName});
+  res.json({
+    appanme: appName,
+    version: appVersion
+  });
 });
 
 // Iniciar el servidor

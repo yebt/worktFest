@@ -23,13 +23,26 @@ app.get('/app', (req, res) => {
   });
 });
 
-// Ruta principal
+// Ruta rand number
 app.get('/random', (req, res) => {
   const random = Math.random()
   res.json({
     message: 'rand number', 
     random
   });
+});
+
+// Ruta uwu
+app.get('/uwu', (req, res) => {
+  res.json({
+    message: 'UwU', 
+  });
+});
+
+// Ruta data
+app.get('/data', (req, res) => {
+  const data = require('./data.json')
+  res.json(data);
 });
 
 // Iniciar el servidor

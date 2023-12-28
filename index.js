@@ -23,6 +23,15 @@ app.get('/app', (req, res) => {
   });
 });
 
+// Ruta principal
+app.get('/random', (req, res) => {
+  const random = Math.random()
+  res.json({
+    message: 'rand number', 
+    random
+  });
+});
+
 // Iniciar el servidor
 app.listen(port, () => {
   console.log(`Servidor Express escuchando en http://localhost:${port}`);

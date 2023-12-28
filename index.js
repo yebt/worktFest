@@ -6,6 +6,7 @@ const port = process.env.PORT ?? 3000;
 
 const appName= process.env.APP_NAME ?? 'No instance'
 const appVersion= process.env.VERSION ?? '--'
+const appLogo= process.env.LOGO ?? ''
 
 // Ruta principal
 app.get('/', (req, res) => {
@@ -16,7 +17,8 @@ app.get('/', (req, res) => {
 app.get('/app', (req, res) => {
   res.json({
     appanme: appName,
-    version: appVersion
+    version: appVersion,
+    logo:appLogo
   });
 });
 

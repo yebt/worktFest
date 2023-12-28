@@ -16,6 +16,7 @@ app.get('/', (req, res) => {
 // Ruta principal
 app.get('/app', (req, res) => {
   res.json({
+    message: 'APP',
     appanme: appName,
     version: appVersion,
     logo:appLogo
